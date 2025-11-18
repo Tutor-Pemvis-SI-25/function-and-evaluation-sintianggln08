@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="TLast"/>
+        <attribute name="authors" value="sinti"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-11-18 09.09.11 PM"/>
+        <attribute name="created" value="c2ludGk7TVNJOzIwMjUtMTEtMTg7MDguNDUuNDQgUE07MjA0OQ=="/>
+        <attribute name="edited" value="c2ludGk7TVNJOzIwMjUtMTEtMTg7MDkuMDkuMTEgUE07MTsyMTUy"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="totalData" type="Integer" array="False" size=""/>
+            <declare name="command" type="String" array="False" size=""/>
+            <declare name="deskripsi, kode, matkul, dosen, deadline, ketID, status" type="Integer" array="True" size="10"/>
+            <declare name="kesulitan, hari" type="Integer" array="True" size="10"/>
+            <declare name="prioritas" type="Real" array="True" size="10"/>
+            <assign variable="totalData" expression="0"/>
+            <while expression="command!=&quot;---&quot;">
+                <input variable="command"/>
+                <if expression="command==&quot;AddTask&quot;">
+                    <then>
+                        <call expression="AddTask"/>
+                    </then>
+                    <else>
+                        <if expression="UpdateTask">
+                            <then>
+                                <call expression="UpdateTask"/>
+                            </then>
+                            <else>
+                                <if expression="ShowAssignment">
+                                    <then>
+                                        <call expression="ShowAssignment"/>
+                                    </then>
+                                    <else>
+                                        <if expression="command==&quot;---&quot;">
+                                            <then/>
+                                            <else/>
+                                        </if>
+                                    </else>
+                                </if>
+                            </else>
+                        </if>
+                    </else>
+                </if>
+            </while>
+        </body>
+    </function>
+    <function name="AddTask" type="None" variable="">
+        <parameters/>
+        <body>
+            <if expression="totalData &lt; 10">
+                <then>
+                    <input variable="Deskripsi[totalData]"/>
+                </then>
+                <else>
+                    <if expression="Deskripsi[totalData]==&quot;---&quot;">
+                        <then/>
+                        <else/>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
